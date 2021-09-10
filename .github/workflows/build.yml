@@ -77,3 +77,4 @@ jobs:
         with:
           name: firmware
           path: jorne_right_nrfmicro_13.uf2
+
