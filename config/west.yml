@@ -35,7 +35,7 @@ jobs:
         id: west-update
         with:
           args: 'update'
-     - name: West Config Zephyr Base
+      - name: West Config Zephyr Base
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
         id: west-config
         with:
