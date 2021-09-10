@@ -1,11 +1,44 @@
-on: [push, pull_request, workflow_dispatch]
-
 name: Build
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build.yml"
+      - "app/**"
+  pull_request:
+    paths:
+      - ".github/workflows/build.yml"
+      - "app/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build Test
+    container:
+      image: zmkfirmware/zmk-build-arm:2.4
+    strategy:
+      matrix:
+        board:
+          - nrfmicro_13
+        shield:
+          - jorne_left
+          - jorne_right
+        cmake-args: [""]
+        include:
+          - board: bdn9_rev2
+          - board: dz60rgb_rev1
+          - board: nrf52840_m2
+            shield: m60
+          - board: planck_rev6
+          - board: proton_c
+            shield: clueboard_california
+          - board: nice_nano
+            shield: kyria_left
+            cmake-args: -DCONFIG_ZMK_DISPLAY=y
+            skip-archive: true
+          - board: nice_nano
+            shield: kyria_right
+            cmake-args: -DCONFIG_ZMK_DISPLAY=y
+            skip-archive: true
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -19,66 +52,39 @@ jobs:
             tools/
             zephyr/
             bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: 4-${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('app/west.yml') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: West Init
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-init
-        with:
-          args: 'init "-l config"'
-      - name: West Update
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-update
-        with:
-          args: 'update'
-      - name: West Config Zephyr Base
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-config
-        with:
-          args: 'config "--global zephyr.base-prefer configfile"'
-      - name: West Zephyr Export
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-zephyr-export
-        with:
-          args: 'zephyr-export'
-      - name: West Build (Jorne Left)
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build-jorne-left
-        with:
-          args: 'build "--pristine -s zmk/app -b nrfmicro_13 -- -DSHIELD=jorne_left -DZMK_CONFIG=/github/workspace/config/jorne"'
-      - name: Jorne DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/nrfmicro_13.dts.pre.tmp
-      - name: Jorne Left Kconfig file
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 jorne_left_nrfmicro_13.uf2
-      - name: Archive (Jorne Left)
+            4-${{ runner.os }}-build-${{ env.cache-name }}-
+            4-${{ runner.os }}-build-
+            4-${{ runner.os }}-
+        timeout-minutes: 2
+        continue-on-error: true
+      - name: Initialize workspace (west init)
+        run: west init -l app
+      - name: Update modules (west update)
+        run: west update
+      - name: Export Zephyr CMake package (west zephyr-export)
+        run: west zephyr-export
+      - name: Prepare variables
+        id: variables
+        run: |
+          SHIELD_ARG=
+          ARTIFACT_NAME="${{ matrix.board }}"
+          if [ -n "${{ matrix.shield }}" ]; then
+            SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
+            ARTIFACT_NAME="${ARTIFACT_NAME}-${{ matrix.shield }}"
+          fi
+          ARTIFACT_NAME="${ARTIFACT_NAME}-zmk"
+          echo ::set-output name=shield-arg::${SHIELD_ARG}
+          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
+      - name: Build (west build)
+        run: west build -s app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }} ${{ matrix.cmake-args }}
+      - name: Archive artifacts
+        if: ${{ !matrix.skip-archive }}
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
-          path: jorne_left_nrfmicro_13.uf2
-      - name: West Build (Jorne Right)
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build-jorne-right
-        with:
-          args: 'build "--pristine -s zmk/app -b nrfmicro_13 -- -DSHIELD=jorne_right -DZMK_CONFIG=/github/workspace/config/jorne"'
-      - name: Jorne Right Kconfig file
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 jorne_right_nrfmicro_13.uf2
-      - name: Archive (Jorne Right)
-        uses: actions/upload-artifact@v2
-        with:
-          name: firmware
-          path: jorne_right_nrfmicro_13.uf2
-      - name: West Build (Jian Left)
-        uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build-jian-left
-        with:
-          args: 'build "--pristine -s zmk/app -b nrfmicro_13 -- -DSHIELD=jian_left -DZMK_CONFIG=/github/workspace/config/jian"'
-
+          name: "${{ steps.variables.outputs.artifact-name }}"
+          path: |
+            build/zephyr/zmk.hex
+            build/zephyr/zmk.uf2
+        continue-on-error: true
