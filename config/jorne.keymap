@@ -7,8 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "combos.dtsi"
-#include "macros.dtsi"
+/* #include "combos.dtsi" */
+/* #include "macros.dtsi" */
 
 #define COLEMAK  0
 #define SYM      1
@@ -35,12 +35,7 @@
 #define MM_R   &kp LG(LA(RIGHT))    // moom right
 #define MM_F   &kp LG(LA(F))        // moom full screen
 
-  &sl {
-             release-after-ms = <2000>;
-  };
-  &sk {
-             release-after-ms = <2000>;
-  };
+
 / {   
   behaviors {
        //&hm LGUI A
@@ -52,7 +47,7 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
      };
-     //lm SYM SYM
+     //&lm SYM SYM
      lm: layer_mods {
 		          compatible = "zmk,behavior-hold-tap";
 		          label = "LAYER_MOD";
