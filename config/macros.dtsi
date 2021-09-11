@@ -8,6 +8,6 @@
     bindings = <BINDINGS>; \
   };
 
-MCR(bt1, &bt BT_SEL 0 &to BT)
-MCR(bt2, &bt BT_SEL 1 &to BT)
-MCR(bt3, &bt BT_SEL 2 &to BT)
+/* MCR(bt1, &bt BT_SEL 0 &to BT) */
+/* MCR(bt2, &bt BT_SEL 1 &to BT) */
+/* MCR(bt3, &bt BT_SEL 2 &to BT) */
