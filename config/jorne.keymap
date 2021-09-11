@@ -7,8 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "combos.dtsi"
-#include "macros.dtsi"
+
 
 #define COLEMAK  0
 #define SYM      1
@@ -21,15 +20,14 @@
 #define SG(key)   LS(LG(key))
 #define SC(key)   LS(LC(key))
 
-#define AS(key) &as LS(key) key  //  auto shift
+#define AS(key) &as LS(key) key     //  auto shift
+#define SH_ALT &kp LS(LALT)         //  shift+alt
 
-#define SH_ALT &kp LS(LALT)       //  shift+alt
 
+#define ALF    &kp LG(SPACE)        // alfred
 
-#define ALF    &kp LG(SPACE)      // alfred
-
-#define DESK_L &kp LC(LEFT))      // left desktop
-#define DESK_R &kp LC(RIGHT))     // right desktop
+#define DESK_L &kp LC(LEFT))        // left desktop
+#define DESK_R &kp LC(RIGHT))       // right desktop
 
 #define MM_L   &kp LG(LA(LEFT))     // moom left
 #define MM_R   &kp LG(LA(RIGHT))    // moom right
@@ -38,8 +36,8 @@
 
 / {   
   behaviors {
-       //&hm LGUI A
-       hm: homerow_mods {
+     //&hm LGUI A
+     hm: homerow_mods {
               compatible = "zmk,behavior-hold-tap";
               label = "HOMEROW_MODS";
               #binding-cells = <2>;
@@ -76,7 +74,7 @@
               quick_tap_ms = <0>;
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
-       };
+    };
   };
   keymap {
        compatible = "zmk,keymap";
@@ -107,15 +105,6 @@
                           >;
               };
               BT {
-/*                                                               ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┐           ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-                                                                 │     │     │     │     │     │     │     │           │     │     │     │     │     │     │     │
-                                                                 └─────┼─────┼─────┼─────┼─────┼─────┼─────┤           ├─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-                                                                       │     │     │     │     │     │     │           │     │     │     │     │     │     │
-                                                                       ├─────┼─────┼─────┼─────┼─────┼─────┤           ├─────┼─────┼─────┼─────┼─────┼─────┤
-                                                                       │     │     │     │     │     │     │           │     │     │     │     │     │     │
-                                                                       └─────┴─────┴─────┴──┬──┴──┬──┴──┬──┴──┐     ┌──┴──┬──┴──┬──┴──┬──┴─────┴─────┴─────┘
-                                                                                            │     │     │     │     │     │     │     │
-                                                                                            └─────┴─────┴─────┘     └─────┴─────┴─────┘                                                                                             */
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
        &reset      &bootloader       XXX           XXX        &macro_bt3     &mcr_bt2     &mcr_bt1                                       XXX            XXX           XXX           XXX           XXX       &bootloader      &reset
