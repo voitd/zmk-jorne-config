@@ -21,17 +21,17 @@
 #define SC(key)   LS(LC(key))
 
 #define AS(key) &as LS(key) key     //  auto shift
-#define SH_ALT &kp LS(LALT)         //  shift+alt
+#define SH_ALT  &kp LS(LALT)         //  shift+alt
 
 
-#define ALF    &kp LG(SPACE)        // alfred
+#define ALF     &kp LG(SPACE)        // alfred
 
-#define DESK_L &kp LC(LEFT))        // left desktop
-#define DESK_R &kp LC(RIGHT))       // right desktop
+#define DSK_L   &kp LC(LEFT))        // left desktop
+#define DSK_R   &kp LC(RIGHT))       // right desktop
 
-#define MM_L   &kp LG(LA(LEFT))     // moom left
-#define MM_R   &kp LG(LA(RIGHT))    // moom right
-#define MM_F   &kp LG(LA(F))        // moom full screen
+#define MM_L    &kp LG(LA(LEFT))     // moom left
+#define MM_R    &kp LG(LA(RIGHT))    // moom right
+#define MM_F    &kp LG(LA(F))        // moom full screen
 
 
 / {   
