@@ -19,7 +19,6 @@
 #define SG(key)   LS(LG(key))
 #define SC(key)   LS(LC(key))
 
-#define AS(key) &as LS(key) key)  //  auto shift
 
 #define SH_ALT &kp LS(LALT)  //  shift+alt
 
@@ -85,6 +84,9 @@
               bindings = <&kp>, <&kp>;
        };
   };
+
+  #define AS(key) &as LS(key) key)  //  auto shift
+
   keymap {
        compatible = "zmk,keymap";
               COLEMAK {
