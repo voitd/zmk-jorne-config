@@ -21,10 +21,7 @@
 #define SG(key)   LS(LG(key))
 #define SC(key)   LS(LC(key))
 
-#define AS(key) &as LS(key) key  //  auto shift
-
 #define SH_ALT &kp LS(LALT)       //  shift+alt
-
 
 #define ALF    &kp LG(SPACE)      // alfred
 
@@ -46,7 +43,7 @@
               tapping_term_ms = <200>;
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
-     };
+<t_k€>Ã½-utils-keymap-listen-fallback:6)     };
      //&lm SYM SYM
      lm: layer_mods {
 		          compatible = "zmk,behavior-hold-tap";
@@ -68,10 +65,10 @@
 		          bindings = <&kp>, <&kp>;
 		};
     //&as LS(DOT) DOT
-    as: auto_shift {
+    as: auto_shift {d
               compatible = "zmk,behavior-hold-tap";
               label = "AUTO_SHIFT";
-              #binding-cells = <2>;
+              #bindin<t_k€>Ã½-utils-keymap-listen-fallback:6)g-cells = <2>;
               tapping-term-ms = <200>;
               quick_tap_ms = <0>;
               flavor = "tap-preferred";
