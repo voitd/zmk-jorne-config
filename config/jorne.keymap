@@ -33,12 +33,9 @@
 #define MM_R   &kp LG(LA(RIGHT))    // moom right
 #define MM_F   &kp LG(LA(F))        // moom full screen
 
-  combos {
-             #include "combos.dtsi"
-  };
+
 / {   
   behaviors {
-       #include "macros.dtsi"
        //&hm LGUI A
        hm: homerow_mods {
               compatible = "zmk,behavior-hold-tap";
