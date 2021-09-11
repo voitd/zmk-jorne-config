@@ -21,7 +21,7 @@
 
 #define AS(key) &as LS(key) key)  //  auto shift
 
-#define SA &kp LS(LALT)  //  shift+alt
+#define SH_ALT &kp LS(LALT)  //  shift+alt
 
 
 #define ALF LG(SPACE)        // alfred
@@ -106,7 +106,7 @@
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
                        XXX       &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O      XXX  
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                       SA          &kp Z         &kp X         &kp C         &kp D         &kp V                                        &kp K         &kp H        &kp COMMA      &kp DOT      &kp SLASH    &lm SYM SYM   
+                     SH_ALT        &kp Z         &kp X         &kp C         &kp D         &kp V                                        &kp K         &kp H        &kp COMMA      &kp DOT      &kp SLASH    &lm SYM SYM   
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            &mt LCMD TAB &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE &mt LCTRL ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
