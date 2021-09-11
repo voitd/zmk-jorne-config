@@ -1,0 +1,13 @@
+#define str(s) #s
+
+#define MCR(NAME, BINDINGS) \
+  macro_##NAME: macro_##NAME { \
+    compatible = "zmk,behavior-macro"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <BINDINGS>; \
+  };
+
+MCR(bt1, &bt BT_SEL 0 &to BT)
+MCR(bt2, &bt BT_SEL 1 &to BT)
+MCR(bt3, &bt BT_SEL 2 &to BT)
