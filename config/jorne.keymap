@@ -33,21 +33,10 @@
 #define MM_R    &kp LG(LA(RIGHT))    // moom right
 #define MM_F    &kp LG(LA(F))        // moom full screen
 
-#define SCRNSHT &kp SG(&kp N5)
-#define AREASHT &kp SG(&kp N4)
-#define ALLSHT &kp SG(&kp N3)
+#define SCRNSHT &kp SG(N5)
+#define AREASHT &kp SG(N4)
+#define ALLSHT  &kp SG(N3)
 
-&lt {
-    tapping-term-ms = <200>;
-    quick_tap_ms = <0>;
-    flavor = "balanced";
-};
-
-&mt {
-    tapping-term-ms = <200>;
-    quick_tap_ms = <0>;
-    flavor = "balanced";
-};
 
 / {   
   behaviors {
