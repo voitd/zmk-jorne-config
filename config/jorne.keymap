@@ -42,7 +42,6 @@
 
 / {   
   behaviors {
-     #include "macros.dtsi"
      //&hm LGUI A
      hm: homerow_mods {
               compatible = "zmk,behavior-hold-tap";
