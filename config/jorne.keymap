@@ -41,9 +41,6 @@
 
 
 / {   
-  combos {
-    #include "combos.dtsi"
-  }
   behaviors {
      //&hm LGUI A
      hm: homerow_mods {
