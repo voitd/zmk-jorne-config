@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define TIMEOUT 175
 
 #define COLEMAK  0
 #define SYM      1
@@ -21,17 +22,17 @@
 #define SC(key)  &kp LS(LC(key))
 #define SH_ALT   &kp LS(LALT)         //  shift+alt
 
-#define AS(key) &as LS(key) key     //  auto shift
+#define AS(key)  &as LS(key) key      //  auto shift
 
 
-#define ALF     &kp LG(SPACE)        // alfred
+#define ALF      &kp LG(SPACE)        // alfred
 
 #define DSKT_L   &kp LC(LEFT)        // left desktop
 #define DSKT_R   &kp LC(RIGHT)       // right desktop
 
-#define MM_L    &kp LG(LA(LEFT))     // moom left
-#define MM_R    &kp LG(LA(RIGHT))    // moom right
-#define MM_F    &kp LG(LA(F))        // moom full screen
+#define MM_L     &kp LG(LA(LEFT))     // moom left
+#define MM_R     &kp LG(LA(RIGHT))    // moom right
+#define MM_F     &kp LG(LA(F))        // moom full screen
 
 #define SCRNSHT &kp SG(N5)
 #define AREASHT &kp SG(N4)
@@ -114,7 +115,7 @@
               FUNC {
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-         ALF         AREASHT        &kp F1       &kp F2        &kp F3        &kp F4      &kp C_VOL_UP                                     XXX           XXX            XXX           XXX           XXX           XXX       &kp C_SLEEP
+         XXX         AREASHT        &kp F1       &kp F2        &kp F3        &kp F4      &kp C_VOL_UP                                     XXX           XXX            XXX           XXX           XXX           XXX       &kp C_SLEEP
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
                      SCRNSHT        &kp F5       &kp F6        &kp F7        &kp F8       &kp K_MUTE                                      XXX           XXX            XXX           XXX           XXX           XXX                                                                                                                                                                     
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
