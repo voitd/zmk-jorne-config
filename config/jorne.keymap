@@ -39,11 +39,11 @@
 #define AREASHT &kp SG(N4)
 #define ALLSHT  &kp SG(N3)
 
-  /* combos { */
-    /* #include "combos.dtsi" */
-  /* } */
 
 / {   
+  combos {
+    #include "combos.dtsi"
+  }
   behaviors {
      //&hm LGUI A
      hm: homerow_mods {
