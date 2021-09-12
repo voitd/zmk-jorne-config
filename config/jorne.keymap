@@ -82,6 +82,9 @@
               bindings = <&kp>, <&kp>;
     };
   };
+  combos {
+    #include "combos.dtsi"
+  };
   keymap {
        compatible = "zmk,keymap";
               COLEMAK {
