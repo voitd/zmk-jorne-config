@@ -36,7 +36,7 @@
 #define MM_F     &kp LG(LA(F))        // moom full screen
 
 #define SCRNSHT &kp SG(N5)
-#define AREASHT &kp SG(N4)
+#define AREASHT &kp LS(LG(N4))
 #define ALLSHT  &kp SG(N3)
 
 
