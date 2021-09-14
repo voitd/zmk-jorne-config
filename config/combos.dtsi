@@ -14,25 +14,37 @@ compatible = "zmk,combos";
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
+    timeout-ms = <75>; \
   };
 
 
 COMBO(copy,  &kp LG(C), 26 27, COLEMAK)
 COMBO(paste, &kp LG(V), 30 31, COLEMAK)
-COMBO(undo, &kp LC(Z), 28 29, COLEMAK)
+COMBO(undo,  &kp LC(Z), 28 29, COLEMAK)
 
 COMBO(grave, &kp GRAVE, 11 12, COLEMAK)
 
-COMBO(0, &kp N0 , 14 27, COLEMAK)
-COMBO(1, &kp N1 , 15 28, COLEMAK)
-COMBO(2, &kp N2 , 16 29, COLEMAK)
-COMBO(3, &kp N3 , 17 30, COLEMAK)
-COMBO(4, &kp N4 , 18 31, COLEMAK)
-COMBO(5, &kp N5 , 21 32, COLEMAK)
-COMBO(6, &kp N6 , 22 33, COLEMAK)
-COMBO(7, &kp N7 , 23 34, COLEMAK)
-COMBO(8, &kp N8 , 24 35, COLEMAK)
-COMBO(9, &kp N9 , 25 36, COLEMAK)
+COMBO(1, &kp N1 , 14 27, COLEMAK)
+COMBO(2, &kp N2 , 15 28, COLEMAK)
+COMBO(3, &kp N3 , 16 29, COLEMAK)
+COMBO(4, &kp N4 , 17 30, COLEMAK)
+COMBO(5, &kp N5 , 20 31, COLEMAK)
+COMBO(6, &kp N6 , 21 32, COLEMAK)
+COMBO(7, &kp N7 , 22 33, COLEMAK)
+COMBO(8, &kp N8 , 23 34, COLEMAK)
+COMBO(9, &kp N9 , 24 35, COLEMAK)
+COMBO(0, &kp N0 , 25 36, COLEMAK)
+
+COMBO(exclamation, &kp EXCL   , 1 15, COLEMAK)  // !
+COMBO(at,          &kp AT     , 2 16, COLEMAK)  // @
+COMBO(hash,        &kp HASH   , 3 17, COLEMAK)  // #
+COMBO(dollar,      &kp DOLLAR , 4 18, COLEMAK)  // $
+COMBO(persent,     &kp PRCNT  , 5 19, COLEMAK)  // %
+COMBO(caret,       &kp CARET  , 20 8, COLEMAK)  // ^
+COMBO(ampr,        &kp AMPS   , 21 9, COLEMAK)  // &
+COMBO(star,        &kp STAR   , 22 10, COLEMAK) // *
+COMBO(left par,    &kp LPAR   , 23 11, COLEMAK) // (
+COMBO(right par,   &kp RPAR   , 24 12, COLEMAK) // )
 
 
 COMBO(bootloader, &bootloader, 26 37, FUNC)

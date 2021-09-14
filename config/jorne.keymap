@@ -39,6 +39,17 @@
 #define AREASHT &kp LS(LG(N4))
 #define ALLSHT  &kp LS(LG(N3))
 
+&lt {
+    tapping-term-ms = <200>;
+    quick_tap_ms = <0>;
+    flavor = "balanced";
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    quick_tap_ms = <0>;
+    flavor = "balanced";
+};
 
 / {   
   behaviors {
