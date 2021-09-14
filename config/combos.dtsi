@@ -17,8 +17,8 @@ compatible = "zmk,combos";
   };
 
 
-COMBO(copy,  &kp LG(C), 30 31, COLEMAK)
-COMBO(paste, &kp LG(V), 26 27, COLEMAK)
+COMBO(copy,  &kp LG(C), 26 27, COLEMAK)
+COMBO(paste, &kp LG(V), 30 31, COLEMAK)
 
 COMBO(bootloader, &bootloader, 26 37, FUNC)
 /* COMBO(undo, &kp LC(Z), 20 21, BASE) */
