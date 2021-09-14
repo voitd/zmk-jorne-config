@@ -43,8 +43,6 @@ COMBO(persent,     &kp PRCNT  , 5 19, COLEMAK)  // %
 COMBO(caret,       &kp CARET  , 20 8, COLEMAK)  // ^
 COMBO(ampr,        &kp AMPS   , 21 9, COLEMAK)  // &
 COMBO(star,        &kp STAR   , 22 10, COLEMAK) // *
-COMBO(left par,    &kp LPAR   , 23 11, COLEMAK) // (
-COMBO(right par,   &kp RPAR   , 24 12, COLEMAK) // )
 
 
 COMBO(bootloader, &bootloader, 26 37, FUNC)
