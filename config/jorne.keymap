@@ -42,13 +42,6 @@
 &lt {
     tapping-term-ms = <200>;
     quick_tap_ms = <0>;
-    flavor = "balanced";
-};
-
-&mt {
-    tapping-term-ms = <200>;
-    quick_tap_ms = <0>;
-    flavor = "balanced";
 };
 
 / {   
