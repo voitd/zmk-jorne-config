@@ -91,11 +91,11 @@
               label = " CLMK";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-         XXX           XXX          &kp Q         &kp W         &kp F         &kp P         &kp G                                        &kp J         &kp L         &kp U         &kp Y        AS(SQT)      AS(SEMI)        XXX  
+         XXX           XXX          &kp Q         &kp W         &kp F         &kp P         &kp B                                        &kp J         &kp L         &kp U         &kp Y        AS(SQT)      AS(COLON)        XXX  
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                       XXX       &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp D                                        &kp H       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O   &lm FUNC FUNC
+                       XXX       &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O   &lm FUNC FUNC
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                     SH_ALT         &kp Z         &kp X         &kp C         &kp V         &kp B                                        &kp K         &kp M       AS(COMMA)      AS(DOT)      AS(SLASH)    &lm SYM SYM   
+                     SH_ALT         &kp Z         &kp X         &kp C         &kp D         &kp V                                        &kp K         &kp M       AS(COMMA)      AS(DOT)      AS(SLASH)    &lm SYM SYM   
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            &mt LCMD TAB &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE &mt LCTRL ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
