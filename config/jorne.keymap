@@ -41,7 +41,7 @@
 
 &lt {
     tapping-term-ms = <200>;
-    quick_tap_ms = <0>;
+    quick_tap_ms = <-1>;
 };
 
 / {   
