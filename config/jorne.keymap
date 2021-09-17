@@ -40,20 +40,11 @@
 #define ALLSHT  &kp LS(LG(N3))
 
 // home-row mods
-#define MODA LGUI A
-#define MODR LGUI R 
-#define MODS LALT S
-#define MODT LCTRL T
-#define MODF LSHIFT F
+#define MODA LCTRL A
+#define MODR LALT R 
+#define MODS LSHIFT S
+#define MODT LGUI T
 
-#define MODJ RSHIFT J
-#define MODK RCTRL K
-#define MODL RALT L
-#define MODSEMI RGUI SEMI
-
-// &lt {
-//     tapping-term-ms = <200>;
-// };
 
 / {   
   behaviors {
