@@ -69,8 +69,8 @@ jobs:
         with:
           name: firmware
           path: jorne_right_nrfmicro_13.uf2
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: ${{ matrix.shield }}_${{ matrix.board }}.uf2
+      # - name: Release
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: ${{ matrix.shield }}_${{ matrix.board }}.uf2

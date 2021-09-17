@@ -21,14 +21,14 @@
 #define SA(key)  &kp LS(LA(key))
 #define SG(key)  &kp LS(LG(key))
 #define SC(key)  &kp LS(LC(key))
-#define SH_ALT   &kp LS(LALT)         //  shift+alt
+#define SH_ALT   &kp LS(LALT)         // shift+alt
 
-#define AS(key)  &as LS(key) key      //  auto shift
+#define AS(key)  &as LS(key) key      // auto shift
 
 #define ALF      &kp LG(SPACE)        // alfred
 
-#define DSKT_L   &kp LC(LEFT)        // left desktop
-#define DSKT_R   &kp LC(RIGHT)       // right desktop
+#define DSKT_L   &kp LC(LEFT)         // left desktop
+#define DSKT_R   &kp LC(RIGHT)        // right desktop
 
 #define MM_L     &kp LG(LA(LEFT))     // moom left
 #define MM_R     &kp LG(LA(RIGHT))    // moom right
@@ -75,7 +75,7 @@
               quick_tap_ms = <0>;
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
-    };
+    };    
     #include "macros.dtsi"
   };
   combos {
