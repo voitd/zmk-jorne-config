@@ -9,28 +9,7 @@
     mods = <(MOD_LSFT|MOD_RSFT)>;\
   }
 
-
-MOD(n1, AMPS, N1);
-MOD(n2, E, N2);
-MOD(n3, DQT, N3);
-MOD(n4, APOS, N4);
-MOD(n5, LPAR, N5);
-MOD(n6, MINUS, N6);
-MOD(n7, E, N7);
-MOD(n8, UNDER, N8);
-MOD(n9, C, N9);
-MOD(n0, A, N0);
-MOD(min, RPAR, MINUS);
-MOD(lbkt, CARET, DQT);
-MOD(rbkt, DLLR, POUND);
-MOD(sqt, U, PERCENT);
-MOD(backslash, STAR, M);
-MOD(m, COMMA, QMARK);
-MOD(comma, SEMI, PERIOD);
-MOD(dot, COLON, SLASH);
-MOD(fslh, EXCL, SLASH);
-MOD(gt_lt, GT, LT);
-
-//&md_gt_lt
+//&md_col
+MOD(col, SEMI, COLON);
 
 #undef MOD

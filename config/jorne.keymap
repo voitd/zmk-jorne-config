@@ -96,6 +96,7 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
     };
+    #include "macros.dtsi"
   };
   combos {
     #include "combos.dtsi"
