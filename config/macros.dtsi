@@ -10,6 +10,6 @@
   }
 
 //&md_col
-MOD(col, SEMI, COLON);
+MOD(col, COLON, SEMI);
 
 #undef MOD
