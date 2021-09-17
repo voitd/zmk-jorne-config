@@ -1,13 +1,36 @@
 #define str(s) #s
 
-#define MCR(NAME, BINDINGS) \
-  macro_##NAME: macro_##NAME { \
-    compatible = "zmk,behavior-macro"; \
+#define MOD(NAME, KEY, MOD_KEY) \
+  md_##NAME: md_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
     label = str(NAME); \
-    #binding-cells = <0>; \
-    bindings = <BINDINGS>; \
-  };
+    #binding-cells = <0>;\
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>;\
+  }
 
-/* MCR(bt1, &bt BT_SEL 0 &to BT) */
-/* MCR(bt2, &bt BT_SEL 1 &to BT) */
-/* MCR(bt3, &bt BT_SEL 2 &to BT) */
+
+MOD(n1, AMPS, N1);
+MOD(n2, E, N2);
+MOD(n3, DQT, N3);
+MOD(n4, APOS, N4);
+MOD(n5, LPAR, N5);
+MOD(n6, MINUS, N6);
+MOD(n7, E, N7);
+MOD(n8, UNDER, N8);
+MOD(n9, C, N9);
+MOD(n0, A, N0);
+MOD(min, RPAR, MINUS);
+MOD(lbkt, CARET, DQT);
+MOD(rbkt, DLLR, POUND);
+MOD(sqt, U, PERCENT);
+MOD(backslash, STAR, M);
+MOD(m, COMMA, QMARK);
+MOD(comma, SEMI, PERIOD);
+MOD(dot, COLON, SLASH);
+MOD(fslh, EXCL, SLASH);
+MOD(gt_lt, GT, LT);
+
+//&az_gt_lt
+
+#undef MOD
