@@ -25,7 +25,6 @@
 
 #define AS(key)  &as LS(key) key      //  auto shift
 
-
 #define ALF      &kp LG(SPACE)        // alfred
 
 #define DSKT_L   &kp LC(LEFT)        // left desktop
