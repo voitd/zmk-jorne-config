@@ -31,6 +31,6 @@ MOD(dot, COLON, SLASH);
 MOD(fslh, EXCL, SLASH);
 MOD(gt_lt, GT, LT);
 
-//&az_gt_lt
+//&md_gt_lt
 
 #undef MOD
