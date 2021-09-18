@@ -104,7 +104,7 @@
 			        flavor = "balanced";
 			        bindings = <&kp>, <&kp>;
 		};
-    &rst
+    //&rst
     rst: reset_tap {
 			        compatible = "zmk,behavior-hold-tap";
 			        label = "Bootloader Tap - Reset Hold";
