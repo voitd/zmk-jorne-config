@@ -43,14 +43,14 @@
 #define MODS LSHIFT S
 #define MODT LGUI T
 
-#define COL_SEM  &dtm SEMI COLON      // :/; 
-#define DOT_COM  &dtm COMMA DOT       // ./,
+#define COL_SEM  &dtm SEMI COLON 
+#define DOT_COM  &dtm COMMA DOT
 
-#define L_BK      &dtm LBRC LPAR       // (/{
-#define R_BK      &dtm RBRC RPAR       // )/}
+#define L_BK      &dtm LBRC LPAR
+#define R_BK      &dtm RBRC RPAR
 
-#define L_LT      &dtm LT LBKT         // [/<
-#define R_GT      &dtm GT RBKT         // ]/>
+#define L_LT      &dtm LT LBKT
+#define R_GT      &dtm GT RBKT
 
 &lt {
     tapping-term-ms = <200>;
