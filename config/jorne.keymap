@@ -43,8 +43,14 @@
 #define MODS LSHIFT S
 #define MODT LGUI T
 
-#define COL_SEM  &dtm SEMI COLON
-#define DOT_COM  &dtm COMMA DOT
+#define COL_SEM  &dtm SEMI COLON      // :/; 
+#define DOT_COM  &dtm COMMA DOT       // ./,
+
+#define LBK      &dtm LBRC LPAR       // (/{
+#define RBK      &dtm RBRC RPAR       // )/}
+
+#define LLT      &dtm LT LBKT         // [/<
+#define RGT      &dtm GT RBKT         // ]/>
 
 &lt {
     tapping-term-ms = <200>;
@@ -92,6 +98,7 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
     };
+    //&dtm COMMA DOT
     dtm: double_tap_mod {
 			        compatible = "zmk,behavior-hold-tap";
 			        label = "DOUBLE_TAP";
@@ -114,9 +121,9 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
     &lm FUNC FUNC      XXX          &kp Q         &kp W         &kp F         &kp P         &kp B                                        &kp J         &kp L         &kp U         &kp Y        AS(SQT)       COL_SEM     &lm SYM SYM
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                    &kp LPAR      &hm MODA     &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O    &kp RPAR
+                      LBKT        &hm MODA     &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O       RBK
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                    AS(LBKT)        &kp Z         &kp X         &kp C         &kp D         AS(V)                                       &kp K         &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)     AS(RBKT) 
+                       LLT          &kp Z         &kp X         &kp C         &kp D         AS(V)                                        &kp K         &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)        LGT 
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            &mt LCMD TAB &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE &mt LCTRL ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
@@ -140,13 +147,13 @@
               label = " FUNC";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-      &tog FUNC      AREASHT       &kp F1       &kp F2        &kp F3        &kp F4      &kp C_VOL_UP                                     XXX           XXX            XXX          XXX            XXX           XXX            XXX      
+      &tog FUNC      AREASHT       &kp F1       &kp F2        &kp F3        &kp F4      &kp C_VOL_UP                                      XXX           XXX           XXX          XXX           XXX       &bt BT_SEL 2    &bt BT_CLR   
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                     SCRNSHT       &kp F5       &kp F6        &kp F7        &kp F8       &kp K_MUTE                                      XXX         &sk RGUI      &sk RSHFT     &sk RALT      &sk LCTRL     &tog FUNC                                                                                                                                                                      
+                     SCRNSHT       &kp F5       &kp F6        &kp F7        &kp F8       &kp K_MUTE                                   &out OUT_TOG    &sk RGUI      &sk RSHFT     &sk RALT      &sk LCTRL  &bt BT_SEL 1                                                                                                                                                                      
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                     ALLSHT        &kp F9       &kp F10       &kp F11       &kp F12     &kp C_VOL_DN                                  &bootloader     &reset     &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0   &bt BT_CLR                                                                                         
+                     ALLSHT        &kp F9       &kp F10       &kp F11       &kp F12     &kp C_VOL_DN                                      XXX           XXX           XXX          XXX           XXX       &bt BT_SEL 0                                                                             
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
-                                                                           &kp C_NEXT     &kp C_PP     &kp C_PREV           XXX          XXX           XXX
+                                                                           &kp C_NEXT     &kp C_PP     &kp C_PREV           XXX       &bootloader     &reset
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                           >;
               };
