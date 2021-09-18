@@ -44,7 +44,7 @@
 #define MODT LGUI T
 
 #define COL_SEM  &dtm SEMI COLON
-#define DOT_COM  &dtm DOT COMMA
+#define DOT_COM  &dtm COMMA DOT
 
 &lt {
     tapping-term-ms = <200>;
