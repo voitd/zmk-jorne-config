@@ -86,15 +86,6 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;
     };
-    dtl: double_tap_layer_mod {
-			        compatible = "zmk,behavior-hold-tap";
-			        label = "LAYER_DOUBLE_TAP";
-			        #binding-cells = <2>;
-			        tapping_term_ms = <200>;
-			        quick_tap_ms = <200>;
-			        flavor = "balanced";
-			        bindings = <&mo>, <&kp>;
-		};
     dt: double_tap_mod {
 			        compatible = "zmk,behavior-hold-tap";
 			        label = "DOUBLE_TAP";
@@ -104,13 +95,6 @@
 			        flavor = "balanced";
 			        bindings = <&kp>, <&kp>;
 		};
-    rst: reset_mod {
-			        compatible = "zmk,behavior-hold-tap";
-              label = "BOOTLOADER_TAP_RESET_HOLD"; 
-              #binding-cells = <2>;
-              tapping_term_ms = <200>;
-              flavor = "balanced";
-              bindings = <&reset>, <&bootloader>;    
     #include "macros.dtsi"
   };
   combos {
@@ -138,7 +122,7 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
          XXX         AS(N1)         AS(N2)        AS(N3)        &kp LT      &kp LBRC         XXX                                          XXX        &kp RBRC       &kp GT        &kp STAR     &kp GRAVE     &kp SEMI       &tog SYM   
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                     AS(N4)         AS(N5)        AS(N6)         XXX        AS(EQUAL)     AS(MINUS)                                    &kp LEFT       &kp UP        &kp DOWN      &kp RIGHT      XXX      &dt COLON SEMI 
+                     AS(N4)         AS(N5)        AS(N6)         XXX        AS(EQUAL)     AS(MINUS)                                    &kp LEFT       &kp UP        &kp DOWN      &kp RIGHT      XXX            XXX  
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                      AS(N7)         AS(N8)        &kp N9        &kp N0      &kp PRCNT        XXX                                          XXX           XXX           XXX            XXX        &kp PIPE        XXX
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
