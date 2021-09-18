@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - shield: jorne_left
-            board: nrfmicro_13
-          - shield: jorne_right
-            board: nrfmicro_13
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     include:
+    #       - shield: jorne_left
+    #         board: nrfmicro_13
+    #       - shield: jorne_right
+    #         board: nrfmicro_13
 
 
     name: Build
