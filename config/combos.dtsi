@@ -19,10 +19,11 @@ compatible = "zmk,combos";
 
 
 COMBO(copy,  &kp LG(C), 26 27, COLEMAK)
-COMBO(paste, &kp LG(V), 30 31, COLEMAK)
-COMBO(undo,  &kp LC(Z), 28 29, COLEMAK)
+COMBO(paste, &kp LG(V), 28 29, COLEMAK)
+
 
 COMBO(grave, &kp GRAVE, 11 12, COLEMAK)
+/* 
 
 COMBO(1, &kp N1, 1 2,    COLEMAK)
 COMBO(2, &kp N2, 2 3,    COLEMAK)
@@ -42,7 +43,9 @@ COMBO(dollar,      &kp DOLLAR , 17 18, COLEMAK)  // $
 COMBO(persent,     &kp PRCNT  , 18 19, COLEMAK)  // %
 COMBO(caret,       &kp CARET  , 20 21, COLEMAK)  // ^
 COMBO(ampr,        &kp AMPS   , 21 22, COLEMAK)  // &
-COMBO(star,        &kp STAR   , 22 23, COLEMAK)  // *
+COMBO(star,        &kp STAR   , 22 23, COLEMAK)  // * 
+
+*/
 
 
 /* COMBO(bootloader, &rst, 26 37, FUNC) */
