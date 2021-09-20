@@ -33,7 +33,7 @@ COMBO(6, &kp N6, 7 8,    COLEMAK)
 COMBO(7, &kp N7, 8 9,    COLEMAK)
 COMBO(8, &kp N8, 9 10,   COLEMAK)
 COMBO(9, &kp N9, 10 11,  COLEMAK)
-COMBO(0, &kp N0, 11 12,  COLEMAK)
+COMBO(0, &kp N0, 6 7,    COLEMAK)
 
 COMBO(exclamation, &kp EXCL   , 14 15, COLEMAK)  // !
 COMBO(at,          &kp AT     , 15 16, COLEMAK)  // @
