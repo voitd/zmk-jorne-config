@@ -42,11 +42,11 @@
 #define COL_SEM  &dtm SEMI COLON 
 #define DOT_COM  &dtm COMMA DOT
 
-#define L_BK     &dtm LBKT LBRC  
-#define R_BK     &dtm RBKT RBRC
+#define L_BK     &dtm LBKT LPAR   
+#define R_BK     &dtm RBKT RPAR
 
-#define L_LT     &dtm LT LPAR
-#define R_GT     &dtm GT RPAR
+#define L_LT     &dtm LT LBRC
+#define R_GT     &dtm GT RBRC
 
 &lt {
     tapping-term-ms = <180>;
