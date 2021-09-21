@@ -104,16 +104,6 @@
 			        flavor = "balanced";
 			        bindings = <&kp>, <&kp>;
 		};
-    //&rst
-    rst: reset_tap {
-			        compatible = "zmk,behavior-hold-tap";
-			        label = "Bootloader Tap - Reset Hold";
-			        #binding-cells = <2>;
-			        tapping_term_ms = <200>;
-              flavor = "balanced";
-			        bindings = <&reset>, <&bootloader>;
-    };
-    #include "macros.dtsi"
   };
   combos {
     #include "combos.dtsi"
@@ -124,11 +114,11 @@
               label = " CLMK";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-    &lm FUNC FUNC      XXX          &kp Q         &kp W         &kp F         &kp P         &kp B                                        &kp J         &kp L         &kp U         &kp Y        AS(SQT)       COL_SEM     &lm SYM SYM
+    &lm FUNC FUNC      XXX          &kp Q         &kp W         &kp F         &kp P          &kp B                                       &kp J         &kp L         &kp U         &kp Y        AS(SQT)       COL_SEM     &lm SYM SYM
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                       L_BK      &hm LCTRL A    &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O      R_BK
+                    &kp LPAR      &hm LCTRL A    &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                      &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O    &kp RPAR
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                       L_LT          &kp Z         &kp X         &kp C         &kp D         AS(V)                                        &kp K         &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)       R_GT 
+                    &kp LBRC        &kp Z         &kp X         &kp C         &kp D         AS(V)                                        &kp K         &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)     &kp RPAR
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            &mt LCMD TAB &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE &mt LCTRL ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
@@ -138,11 +128,11 @@
               label = " SMBL";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-         XXX         AS(N1)         AS(N2)        AS(N3)        &kp LT      &kp LBRC         XXX                                          XXX        &kp RBRC       &kp GT        &kp STAR     &kp GRAVE     &kp SEMI      &tog SYM   
+         XXX         AS(N1)         AS(N2)        AS(N3)      &kp LPAR      &kp LBRC         XXX                                       &kp STAR      &kp RBRC       &kp RPAR       XXX        &kp GRAVE     &kp SEMI      &tog SYM   
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
                      AS(N4)         AS(N5)        AS(N6)         XXX        AS(EQUAL)     AS(MINUS)                                    &kp LEFT       &kp UP        &kp DOWN      &kp RIGHT       XXX           XXX  
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                     AS(N7)         AS(N8)        &kp N9        &kp N0      &kp PRCNT        XXX                                        DOT_COM         XXX           XXX            XXX        &kp PIPE        XXX
+                     AS(N7)         AS(N8)        &kp N9        &kp N0      &kp PRCNT        XXX                                        DOT_COM         XXX         &kp LBKT      &kp RBKT      &kp PIPE        XXX
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                                XXX           XXX          DSKT_L          DSKT_R          XXX           XXX
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
