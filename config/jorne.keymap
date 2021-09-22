@@ -49,12 +49,10 @@
 #define R_GT     &dtm RBKT RBRC
 
 &lt {
-    tapping-term-ms = <180>;
     quick-tap-ms = <180>;
 };
 
 &mt {
-    tapping-term-ms = <180>;
     quick-tap-ms = <180>;
 };
 
