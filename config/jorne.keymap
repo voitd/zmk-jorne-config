@@ -22,7 +22,6 @@
 #define SA(key)  &kp LS(LA(key))
 #define SG(key)  &kp LS(LG(key))
 #define SC(key)  &kp LS(LC(key))
-#define SH_ALT   &kp LS(LALT)         // shift+alt
 
 #define AS(key)  &as LS(key) key      // auto shift
 
@@ -41,12 +40,6 @@
 
 #define COL_SEM  &dtm SEMI COLON 
 #define DOT_COM  &dtm COMMA DOT
-
-#define L_BK     &dtm LT LPAR   
-#define R_BK     &dtm GT RPAR
-
-#define L_LT     &dtm LBKT LBRC
-#define R_GT     &dtm RBKT RBRC
 
 &lt {
     quick-tap-ms = <180>;
@@ -112,11 +105,11 @@
               label = " CLMK";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-    &lm FUNC FUNC      XXX          &kp Q         &kp W         &kp F         &kp P          &kp B                                       &kp J         &kp L         &kp U         &kp Y        AS(SQT)       COL_SEM     &lm SYM SYM
+    &lm FUNC FUNC      XXX          &kp Q         &kp W         &kp F         &kp P         &kp B                                       &kp J         &kp L         &kp U         &kp Y        AS(SQT)       COL_SEM     &lm SYM SYM
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                    &kp LPAR      &hm LCTRL A    &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                      &kp M       &hm RGUI N   &hm RSHFT E    &hm RALT I   &hm LCTRL O    &kp RPAR
+                    &kp LPAR     &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                       &kp M       &hm RGUI N    &hm RSHFT E    &hm RALT I   &hm LCTRL O    &kp RPAR
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                    &kp LBRC        &kp Z         &kp X         &kp C         &kp D         AS(V)                                        &kp K         &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)     &kp RBRC
+                    AS(LBKT)        &kp Z         &kp X         &kp C         &kp D         AS(V)                                       &kp K         &kp H        AS(COMMA)      AS(DOT)      AS(SLASH)     AS(RBKT)
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            &mt LCMD TAB &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE &mt LCTRL ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
