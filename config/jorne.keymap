@@ -42,17 +42,17 @@
 #define DOT_COM  &dtm COMMA DOT
 
 &lt {
-    quick-tap-ms = <180>;
+    quick-tap-ms = <120>;
 };
 
 &mt {
-    quick-tap-ms = <180>;
+    quick-tap-ms = <120>;
 };
 
 // Custom debounce-period to mitigate unwanted duplicate keypresses
-&kscan0 {
-    debounce-period = <12>;
-};
+//&kscan0 {
+//    debounce-period = <12>;
+//};
 
 / {   
   behaviors {
