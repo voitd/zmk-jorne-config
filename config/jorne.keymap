@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-// #include <dt-bindings/zmk/outputs.h>
+   
 
 #define TIMEOUT 150
 
@@ -50,9 +50,9 @@
 };
 
 // Custom debounce-period to mitigate unwanted duplicate keypresses
-&kscan0 {
-   debounce-period = <12>;  //default 6ms
-};
+//&kscan0 {
+//   debounce-period = <12>;  //default 6ms
+//};
 
 / {   
   behaviors {
