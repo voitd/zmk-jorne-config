@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
    
 
-#define TIMEOUT 150
+#define TIMEOUT 100
 
 #define COLEMAK  0
 #define SYM      1
