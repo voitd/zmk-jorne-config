@@ -1,9 +1,9 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: voitd
+      url-base: https://github.com/voitd
   projects:
-    - name: zmk
+    - name: voitd
       remote: zmkfirmware
       revision: main
       import: app/west.yml
