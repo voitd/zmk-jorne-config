@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
    
 
-#define TIMEOUT 100
+#define TIMEOUT 80
 
 #define COLEMAK  0
 #define SYM      1
@@ -24,7 +24,7 @@
 #define SC(key)  &kp LS(LC(key))
 
 #define AS(key)  &as LS(key) key      // auto shift
-#define AG(key)  &as LG(key) key      // auto cmd
+#define AG(key)  &as RG(key) key      // auto cmd
 
 #define ALF      &kp LG(SPACE)        // alfred
 
@@ -50,24 +50,23 @@
     quick-tap-ms = <180>;
 };
 
-// Custom debounce-period to mitigate unwanted duplicate keypresses
-//&kscan0 {
-//   debounce-period = <12>;  //default 6ms
-//};
+&hm {
+    quick-tap-ms = <180>;
+};
 
 / {   
   behaviors {
-     //&hm LGUI A
-     hm: homerow_mods {
+    //&hm LGUI A
+    hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping_term_ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-     };
-     //&lm SYM SYM
-     lm: layer_mods {
+    };
+    //&lm SYM SYM
+    lm: layer_mods {
 		    compatible = "zmk,behavior-hold-tap";
 		    label = "LAYER_MOD";
 		    #binding-cells = <2>;
@@ -75,8 +74,8 @@
 		    quick_tap_ms = <0>;
 		    flavor = "tap-preferred";
 		    bindings = <&mo>, <&tog>;
-		};
-    //&as LS(DOT)
+	};
+    //&as LS(DOT) DOT
     as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
@@ -110,7 +109,7 @@
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
                        XXX       &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M      &hm RGUI N    &hm RSHFT E    &hm RALT I   &hm LCTRL O      XXX 
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                       XXX          AG(Z)         AG(X)         AG(C)         &kp D         AG(V)                                        &kp K        &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)       XXX
+                       XXX          AS(Z)         AS(X)         AS(C)         &kp D         AS(V)                                        &kp K        &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)        XXX
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            &mt BSPC TAB  &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE   &kp ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
@@ -120,7 +119,7 @@
               label = " SMBL";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-      &tog SYM       AS(N1)         AS(N2)        AS(N3)      &kp LPAR      &kp LBRC       &kp LT                                        &kp GT      &kp RBRC       &kp RPAR        XXX       &kp GRAVE     &kp SEMI       &tog SYM   
+          XXX         AS(N1)         AS(N2)        AS(N3)      &kp LPAR      &kp LBRC       &kp LT                                        &kp GT      &kp RBRC       &kp RPAR        XXX       &kp GRAVE     &kp SEMI          XXX     
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
                      AS(N4)         AS(N5)        AS(N6)       &kp STAR     AS(EQUAL)     AS(MINUS)                                     &kp LEFT      &kp UP        &kp DOWN     &kp RIGHT        XXX           XXX  
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
