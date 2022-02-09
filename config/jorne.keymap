@@ -24,6 +24,7 @@
 #define SC(key)  &kp LS(LC(key))
 
 #define AS(key)  &as LS(key) key      // auto shift
+#define AG(key)  &as LG(key) key      // auto cmd
 
 #define ALF      &kp LG(SPACE)        // alfred
 
@@ -58,42 +59,42 @@
   behaviors {
      //&hm LGUI A
      hm: homerow_mods {
-              compatible = "zmk,behavior-hold-tap";
-              label = "HOMEROW_MODS";
-              #binding-cells = <2>;
-              tapping_term_ms = <250>;
-              flavor = "tap-preferred";
-              bindings = <&kp>, <&kp>;
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping_term_ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
      };
      //&lm SYM SYM
      lm: layer_mods {
-		          compatible = "zmk,behavior-hold-tap";
-		          label = "LAYER_MOD";
-		          #binding-cells = <2>;
-		          tapping-term-ms = <250>;
-		          quick_tap_ms = <0>;
-		          flavor = "tap-preferred";
-		          bindings = <&mo>, <&tog>;
+		    compatible = "zmk,behavior-hold-tap";
+		    label = "LAYER_MOD";
+		    #binding-cells = <2>;
+		    tapping-term-ms = <250>;
+		    quick_tap_ms = <0>;
+		    flavor = "tap-preferred";
+		    bindings = <&mo>, <&tog>;
 		};
     //&as LS(DOT)
     as: auto_shift {
-              compatible = "zmk,behavior-hold-tap";
-              label = "AUTO_SHIFT";
-              #binding-cells = <2>;
-              tapping-term-ms = <200>;
-              quick_tap_ms = <0>;
-              flavor = "tap-preferred";
-              bindings = <&kp>, <&kp>;
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
     };
     //&dtm COMMA DOT
     dtm: double_tap_mod {
-			        compatible = "zmk,behavior-hold-tap";
-			        label = "DOUBLE_TAP";
-			        #binding-cells = <2>;
-			        tapping_term_ms = <200>;
-			        quick_tap_ms = <200>;
-			        flavor = "balanced";
-			        bindings = <&kp>, <&kp>;
+			compatible = "zmk,behavior-hold-tap";
+			label = "DOUBLE_TAP";
+			#binding-cells = <2>;
+			tapping_term_ms = <200>;
+			quick_tap_ms = <200>;
+			flavor = "balanced";
+			bindings = <&kp>, <&kp>;
 		};
   };
   // combos {
@@ -105,13 +106,13 @@
               label = " CLMK";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-    &lm FUNC FUNC    &kp F12        &kp Q         &kp W         &kp F         &kp P         &kp B                                       &kp J         &kp L         &kp U         &kp Y        AS(SQT)       COL_SEM      &lm FUNC FUNC
+    &lm FUNC FUNC    &kp F12        &kp Q         &kp W         &kp F         &kp P         &kp B                                        &kp J        &kp L          &kp U         &kp Y        AS(SQT)      COL_SEM      &lm FUNC FUNC
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                    AS(LBKT)     &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                       &kp M       &hm RGUI N    &hm RSHFT E    &hm RALT I   &hm LCTRL O    AS(RBKT) 
+                       XXX       &hm LCTRL A   &hm LALT R    &hm LSHFT S    &hm LGUI T      &kp G                                        &kp M      &hm RGUI N    &hm RSHFT E    &hm RALT I   &hm LCTRL O      XXX 
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                    &kp LPAR        &kp Z         &kp X         &kp C         &kp D         AS(V)                                       &kp K         &kp H        AS(COMMA)      AS(DOT)      AS(SLASH)     &kp RPAR
+                       XXX          AG(Z)         AG(X)         AG(C)         &kp D         AG(V)                                        &kp K        &kp H       AS(COMMA)      AS(DOT)      AS(SLASH)       XXX
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
-                                                                           &mt LCMD TAB &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE &mt LCTRL ESC
+                                                                           &mt BSPC TAB  &lt SYM BSPC  &mt LSHFT RET    &mt RSHFT RET &lt SYM SPACE   &kp ESC
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                            >;
               };
@@ -119,13 +120,13 @@
               label = " SMBL";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-      &tog SYM       AS(N1)         AS(N2)        AS(N3)      &kp LPAR      &kp LBRC         XXX                                       &kp STAR      &kp RBRC       &kp RPAR       XXX        &kp GRAVE     &kp SEMI       &tog SYM   
+      &tog SYM       AS(N1)         AS(N2)        AS(N3)      &kp LPAR      &kp LBRC       &kp RT                                        &kp LT      &kp RBRC       &kp RPAR        XXX       &kp GRAVE     &kp SEMI       &tog SYM   
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                     AS(N4)         AS(N5)        AS(N6)         XXX        AS(EQUAL)     AS(MINUS)                                    &kp LEFT       &kp UP        &kp DOWN      &kp RIGHT       XXX           XXX  
+                     AS(N4)         AS(N5)        AS(N6)       &kp STAR     AS(EQUAL)     AS(MINUS)                                     &kp LEFT      &kp UP        &kp DOWN     &kp RIGHT        XXX           XXX  
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                     AS(N7)         AS(N8)        &kp N9        &kp N0      &kp PRCNT        XXX                                        DOT_COM         XXX         &kp LBKT      &kp RBKT      &kp PIPE        XXX
+                     AS(N7)         AS(N8)        &kp N9        &kp N0      &kp PRCNT      &kp LBKT                                     &kp RBKT       XXX          &kp LBKT      &kp RBKT      &kp PIPE        XXX
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
-                                                                            &sk RGUI      &sk RSHFT       DSKT_L          DSKT_R       &sk RALT      &sk LCTRL 
+                                                                              XXX            XXX         DSKT_L          DSKT_R          &XXX            XXX  
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                           >;
               };
@@ -133,13 +134,13 @@
               label = " FUNC";
               bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬──────────────╮ 
-      &tog FUNC      AREASHT       &kp F1       &kp F2        &kp F3        &kp F4      &bt BT_SEL 0                                 &kp C_VOL_UP       XXX           XXX      &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2    &tog FUNC 
+      &tog FUNC      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                                       &kp F7        &kp F8        &kp F9        &kp F10      &kp F11       &kp F12       &tog FUNC 
 // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼──────────────╯ 
-                     SCRNSHT       &kp F5       &kp F6        &kp F7        &kp F8      &bt BT_SEL 1                                 &kp K_MUTE     &sk RGUI      &sk RSHFT     &sk RALT      &sk LCTRL        XXX                                                                                                                                                              
+                    AREASHT       &kp LCTRL     &kp LALT      &kpLSHFT      &kp LGUI         XXX                                          XXX        &kp RGUI      &kp RSHFT      &kp RALT     &kp LCTRL       XXX                                                                                                                                                               
 //               ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                     ALLSHT        &kp F9       &kp F10       &kp F11       &kp F12      &bt BT_CLR                                  &kp C_VOL_DN      XXX           XXX          XXX            XXX        &bt BT_CLR                                                                  
+                    SCRNSHT          XXX           XXX           XXX       &bt BT_CLR      &reset                                       &reset      &bt BT_CLR   &bt BT_SEL 3  &bt BT_SEL 2   &bt BT_SEL 1  &bt BT_SEL 0                                                              
 //               ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────╮  ╭─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
-                                                                           &kp C_NEXT     &kp C_PP     &kp C_PREV           XXX       &bootloader     &reset
+                                                                           &kp C_VOL_DN   &kp C_PP    &kp C_VOL_UP      &kp C_PREV    &kp K_MUTE    &kp C_NEXT  
 //                                                                       ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                           >;
               };
